@@ -1,9 +1,6 @@
 package mySpringPractice.SpringDI;
 
-import mySpringPractice.SpringDI.Controllers.ConstructorIntjectedController;
-import mySpringPractice.SpringDI.Controllers.MyController;
-import mySpringPractice.SpringDI.Controllers.PropertyInjectedController;
-import mySpringPractice.SpringDI.Controllers.SetterInjectedController;
+import mySpringPractice.SpringDI.Controllers.*;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
@@ -14,6 +11,10 @@ public class SpringDiApplication {
 	public static void main(String[] args) {
 
 		ApplicationContext cxt = SpringApplication.run(SpringDiApplication.class, args);
+
+		MyProfileController myProfileController = (MyProfileController) cxt.getBean("myProfileController");
+		System.out.println(myProfileController.HelloWorldProfile());
+
 		MyController myController = (MyController) cxt.getBean("myController");
 		String greetings = myController.HelloWorld();
 		System.out.println(greetings);
