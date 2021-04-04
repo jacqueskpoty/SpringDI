@@ -1,11 +1,16 @@
 package mySpringPractice.SpringDI;
 
 import mySpringPractice.SpringDI.Controllers.*;
+import mySpringPractice.SpringDI.ExampleBean.FakeDataSource;
+import mySpringPractice.SpringDI.ExampleBean.FakeJmsBroker;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.ComponentScans;
 
 @SpringBootApplication
+//scan other modules for beans
 public class SpringDiApplication {
 
 	public static void main(String[] args) {
@@ -40,5 +45,13 @@ public class SpringDiApplication {
 
 		System.out.println(constructorIntjectedController.sayGreetings());
 
+		System.out.println("---------PROPERTIES---------");
+
+		FakeDataSource fakeDataSource = (FakeDataSource) cxt.getBean("fakeDataSource");
+		FakeJmsBroker fakeJmsBroker = (FakeJmsBroker) cxt.getBean("fakeJmsBroker");
+		System.out.println(fakeDataSource.getUser());
+		System.out.println(fakeDataSource.getPassword());
+		System.out.println(fakeJmsBroker.getUser());
+		System.out.println(fakeJmsBroker.getPassword());
 	}
 }
