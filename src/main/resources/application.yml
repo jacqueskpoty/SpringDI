@@ -1,0 +1,10 @@
+jms:
+  user: Yaml
+  password: Yamina
+
+---
+spring:
+  profiles: es
+jms:
+  user: Yaml
+  password: Yaminana
