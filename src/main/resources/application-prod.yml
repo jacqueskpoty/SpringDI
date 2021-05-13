@@ -1,0 +1,12 @@
+spring:
+  profiles:
+    active: DOG,EN,DEV
+
+guru:
+  user: yaml-prod-User
+  password: yaml-prod-Pass
+  dburl: yaml-prod-Url
+
+jms:
+  user: yaml-jms-prod-user
+  password: yaml-jms-prod-password

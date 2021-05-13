@@ -1,0 +1,29 @@
+spring:
+  profiles:
+    active: DOG,EN,test
+
+guru:
+  user: main-yml-User
+  password: main-yml-Pass
+  dburl: main-yml-Url
+
+jms:
+  user: main-yml-jms-user
+  password: main-yml-jms-password
+
+---
+spring:
+  profiles: test
+guru:
+  user: test-yml-User
+  password: test-yml-Pass
+  dburl: test-yml-Url
+
+jms:
+  user: test-yml-jms-user
+  password: test-yml-jms-password
+
+#Configuration Properties will look for this
+sewa:
+  user: sewa-jms-user
+  password: sewa-jms-password
