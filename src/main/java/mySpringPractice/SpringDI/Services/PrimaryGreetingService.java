@@ -6,8 +6,8 @@ import org.springframework.stereotype.Service;
 
 import org.springframework.stereotype.Service;
 
-@Primary
-@Service
+//@Primary
+//@Service
 public class PrimaryGreetingService implements  IGreetingService{
 
 
